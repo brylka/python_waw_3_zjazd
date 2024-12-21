@@ -13,7 +13,7 @@ class Samochod:
         self.kierunek = random.choice(['x', 'y'])
 
     def losuj_predkosc(self):
-        self.predkosc = random.randint(1, 3)
+        self.predkosc = random.randint(1, 1)
 
     def losuj_kierunek(self):
         self.kierunek = random.choice(['x', 'y'])
