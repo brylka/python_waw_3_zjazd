@@ -13,7 +13,7 @@ class Samochod:
         self.predkosc = random.randint(1,3)
     def aktualizuj_pozycje(self):
         self.x += self.modyfikator * self.predkosc
-        if self.x > 30:
+        if self.x > 29:
             #self.x = 0
             self.modyfikator = -1
             self.x = 29
