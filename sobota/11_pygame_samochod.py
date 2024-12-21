@@ -40,7 +40,7 @@ class Samochod:
 class Swiat:
     def __init__(self):
         pygame.init()
-        self.screen = pygame.display.set_mode((500, 500))
+        self.screen = pygame.display.set_mode((620, 220))
         pygame.display.set_caption("Plansza dla samochodu")
         self.samochod = Samochod()
         self.zycie()
@@ -53,6 +53,12 @@ class Swiat:
                 else:
                     print('.', end="")
             print()
+    def display(self):
+        self.screen.fill((0, 0, 0))
+        x = self.samochod.x*20
+        y = self.samochod.y*20
+        pygame.draw.rect(self.screen, (255, 255, 255), (x, y, 20, 20))
+        pygame.display.flip()
 
     def zycie(self):
         run = True
@@ -61,6 +67,7 @@ class Swiat:
                 if event.type == pygame.QUIT:
                     run = False
             self.print()
+            self.display()
             self.samochod.losuj_predkosc()
             self.samochod.losuj_kierunek()
             self.samochod.aktualizuj_pozycje()
