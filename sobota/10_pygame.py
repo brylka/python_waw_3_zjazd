@@ -18,7 +18,7 @@ while run:
             if event.button == 1:
                 mouse_x, mouse_y = event.pos
                 #print(mouse_x,mouse_y)
-                screen.set_at((mouse_x,mouse_y), (255,255,255))
+                screen.set_at((mouse_x,mouse_y), (0,255,0))
     pygame.display.flip()
 
     sleep(.1)
