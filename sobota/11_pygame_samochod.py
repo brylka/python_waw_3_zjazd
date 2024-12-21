@@ -66,7 +66,7 @@ class Swiat:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     run = False
-            self.print()
+            #self.print()
             self.display()
             self.samochod.losuj_predkosc()
             self.samochod.losuj_kierunek()
