@@ -1,8 +1,8 @@
 from vehicle import Vehicle
 
 class Electric(Vehicle):
-    def __init__(self, mark, model, year, battery):
-        super().__init__(mark, model, year)
+    def __init__(self, mark, model, year, battery, color="biały"):
+        super().__init__(mark, model, year, color)
         self.battery = battery
 
     def hong_2(self):
