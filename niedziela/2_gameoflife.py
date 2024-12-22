@@ -33,7 +33,7 @@ class GameOfLife:
         for y in range(self.height):
             for x in range(self.width):
                 if self.grid[y][x] == 1:
-                    if self.count(x,y) == 2 or self.count(x,y) == 3:
+                    if self.count(x,y) in [2,3]:
                         new_grid[y][x] = 1
                 else:
                     if self.count(x,y) == 3:
