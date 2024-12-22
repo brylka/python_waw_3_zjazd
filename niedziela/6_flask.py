@@ -25,9 +25,13 @@ def error_500():
 def api_kursy():
     return jsonify(data), 200
 
-@app.route('/api/city')
-def city():
-    return jsonify(city)
+@app.route('/kursy')
+def kursy():
+    return render_template("kursy.html", kursy=data['rates'])
+
+# @app.route('/api/city')
+# def city():
+#     return jsonify(city), 200
 
 
 if __name__ == '__main__':
