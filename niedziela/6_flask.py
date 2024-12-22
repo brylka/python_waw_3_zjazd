@@ -7,7 +7,7 @@ response = requests.get(url)
 data = response.json()
 print(data)
 
-city = {'Jelenia Góra': 100000, 'Warszawa': 345345345, 'Poznań': 324324}
+citys = {'Jelenia Góra': 100000, 'Warszawa': 345345345, 'Poznań': 324324}
 
 
 app = Flask(__name__)
@@ -21,17 +21,24 @@ def hello():
 def error_500():
     return "Wystąpił błąd serwera", 500
 
-@app.route('/api/kursy')
-def api_kursy():
-    return jsonify(data), 200
-
 @app.route('/kursy')
 def kursy():
     return render_template("kursy.html", kursy=data['rates'])
 
-# @app.route('/api/city')
-# def city():
-#     return jsonify(city), 200
+@app.route('/przelicznik')
+def przelicznik():
+    return render_template("przelicznik.html", kursy=data['rates'])
+
+
+
+
+@app.route('/api/kursy')
+def api_kursy():
+    return jsonify(data), 200
+
+@app.route('/api/city')
+def city():
+    return jsonify(citys), 200
 
 
 if __name__ == '__main__':

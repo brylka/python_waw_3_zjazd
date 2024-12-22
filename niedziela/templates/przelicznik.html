@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Przelicznik</title>
+</head>
+<body>
+<form action="/przelicznik" method="post">
+    <input name="pln" type="number">
+    <select name="waluta">
+        {% for key, value in kursy.items() %}
+        <option>{{ key }}</option>
+        {% endfor %}
+    </select>
+    <button>Przelicz</button>
+</form>
+
+</body>
+</html>
