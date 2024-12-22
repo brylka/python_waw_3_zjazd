@@ -6,5 +6,7 @@ class Vehicle:
     def hong(self):
         print(f"Samochód {self.mark} trąbi!")
 
-vehicle = Vehicle("BMW", "e30", "2000")
-vehicle.hong()
+if __name__ == '__main__':
+    vehicle = Vehicle("BMW", "e30", "2000")
+    vehicle.hong()
+    print("ala ma kota")
