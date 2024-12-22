@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 import requests
 
 url = 'https://api.frankfurter.dev/v1/latest?base=PLN'
@@ -25,9 +25,15 @@ def error_500():
 def kursy():
     return render_template("kursy.html", kursy=data['rates'])
 
-@app.route('/przelicznik')
+@app.route('/przelicznik', methods=['GET', 'POST'])
 def przelicznik():
-    return render_template("przelicznik.html", kursy=data['rates'])
+    text = None
+    if request.method == 'POST':
+        pln = float(request.form['pln'])
+        waluta = request.form['waluta']
+        przelicznik = data['rates'][waluta]
+        text = f"{pln}PLN = {pln*przelicznik}{waluta}"
+    return render_template("przelicznik.html", kursy=data['rates'], text=text)
 
 
 
